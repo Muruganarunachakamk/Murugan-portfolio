@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murugan Arunachalam K | Market Research Intern Portfolio</title>
+
+    <meta name="description" content="Portfolio of Murugan Arunachalam K — MBA student at Amrita, aspiring Market Research Intern skilled in consumer research, data analysis, and story-driven insights.">
+    <meta name="author" content="Murugan Arunachalam K">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            /* Palette */
+            --color-primary: #1B263B; /* Navy Blue */
+            --color-accent: #3FBFBF;  /* Teal */
+            --color-background: #F8F9FA; /* Soft White */
+            --color-contrast: #CED4DA; /* Warm Gray */
+
+            /* Dark Mode Variables */
+            --dark-primary: #f0f0f0;
+            --dark-background: #111827;
+            --dark-card: #1f2937;
+        }
+
+        /* Base Styles */
+        body { 
+            font-family: 'Nunito Sans', sans-serif; 
+            background-color: var(--color-background); 
+            color: var(--color-primary); 
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1, h2, h3 { 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--color-primary); 
+        }
+
+        /* Utility Classes */
+        .text-primary-color { color: var(--color-primary); }
+        .text-accent { color: var(--color-accent); }
+        .bg-primary-color { background-color: var(--color-primary); }
+        .border-accent { border-color: var(--color-accent); }
+        .shadow-subtle { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02); }
+
+        /* Component Styles */
+        .btn-primary {
+            @apply px-8 py-3 rounded-full font-semibold transition duration-300;
+            @apply bg-accent text-white hover:bg-primary-color hover:text-white shadow-md;
+        }
+        .btn-secondary {
+            @apply px-8 py-3 rounded-full font-semibold transition duration-300;
+            @apply border-2 border-accent text-accent hover:bg-accent hover:text-white shadow-md;
+        }
+        .project-card {
+            @apply p-6 bg-white rounded-xl shadow-subtle hover:shadow-xl transition duration-300 ease-in-out border-t-4 border-transparent hover:border-accent;
+        }
+        .form-input {
+            @apply w-full p-3 border border-contrast rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition duration-200 bg-white;
+        }
+
+        /* Dark Mode Specific Overrides */
+        .dark {
+            --color-primary: var(--dark-primary);
+            --color-background: var(--dark-background);
+        }
+        .dark body { background-color: var(--dark-background); color: var(--dark-primary); }
+        .dark h1, .dark h2, .dark h3 { color: var(--dark-primary); }
+        .dark .bg-gray-50 { background-color: var(--dark-background); }
+        .dark .project-card, .dark .form-input, .dark .bg-white { 
+             background-color: var(--dark-card); 
+             color: var(--dark-primary);
+             border-color: #374151; /* Darker contrast border */
+        }
+        .dark .text-gray-700, .dark .text-gray-500 { color: #D1D5DB; }
+        .dark .bg-primary-color { background-color: var(--color-accent); }
+    </style>
+    </head>
+<body class="antialiased">
+
+    <section id="hero" class="relative min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+        <div class="text-center max-w-4xl">
+            <div class="relative inline-block mb-8">
+                <img src="" alt="Murugan Arunachalam K Profile Photo" class="w-48 h-48 rounded-full object-cover border-4 border-accent shadow-xl animate-fade-in mx-auto">
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 text-primary-color">Murugan Arunachalam K</h1>
+            <p class="text-xl md:text-2xl font-light text-primary-color mb-2">
+                Exploring Data. Understanding Markets. Creating Insights.
+            </p>
+            <div class="text-2xl md:text-3xl font-semibold text-accent mb-10 h-10" id="dynamic-tagline">
+                </div>
+
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="[URL_to_Uploaded_Resume_PDF]" download="Murugan_Arunachalam_K_Resume.pdf" class="btn-primary">
+                    📄 Download Resume
+                </a>
+                <a href="[LinkedIn_URL_from_Resume]" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                    💼 Connect via LinkedIn
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="absolute bottom-10 animate-bounce text-primary-color dark:text-gray-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+    </section>
+
+    <section id="about" class="py-20 px-4 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 border-b-4 border-accent pb-2">👋 About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Analytical Foundation & Future Focus</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                        Driven by analytical curiosity, I'm currently an **MBA student (2025–2027) at Amrita School of Business, Coimbatore**, focusing on strategic decision-making and market dynamics. My academic foundation is in **B.Com (Accounting & Finance)** from Sri Krishna Arts and Science College (CGPA **8.1**), providing a strong quantitative lens for my insights. I specialize in dissecting consumer behavior and market trends, translating complex data into actionable business strategies.
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold mt-8 mb-4">Key Interest Areas</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 border border-contrast rounded-lg shadow-subtle hover:border-accent transition duration-300 bg-white dark:bg-dark-card">
+                            <span class="text-2xl text-accent block mb-2">🧠</span>
+                            <p class="font-semibold">Consumer Psychology</p>
+                        </div>
+                        <div class="p-4 border border-contrast rounded-lg shadow-subtle hover:border-accent transition duration-300 bg-white dark:bg-dark-card">
+                            <span class="text-2xl text-accent block mb-2">📈</span>
+                            <p class="font-semibold">Market Trends Analysis</p>
+                        </div>
+                        <div class="p-4 border border-contrast rounded-lg shadow-subtle hover:border-accent transition duration-300 bg-white dark:bg-dark-card">
+                            <span class="text-2xl text-accent block mb-2">📊</span>
+                            <p class="font-semibold">Data Interpretation</p>
+                        </div>
+                        <div class="p-4 border border-contrast rounded-lg shadow-subtle hover:border-accent transition duration-300 bg-white dark:bg-dark-card">
+                            <span class="text-2xl text-accent block mb-2">🎯</span>
+                            <p class="font-semibold">Business Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Education Journey</h3>
+                    <ol class="relative border-l border-contrast ml-4">                  
+                        <li class="mb-8 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-accent rounded-full -left-3 ring-8 ring-white dark:ring-dark-background">🎓</span>
+                            <h4 class="font-semibold text-primary-color">MBA - Master of Business Administration</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Amrita School of Business, Coimbatore</p>
+                            <p class="text-sm italic dark:text-gray-400">2025 – 2027 (Ongoing)</p>
+                        </li>
+                        <li class="mb-8 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-accent rounded-full -left-3 ring-8 ring-white dark:ring-dark-background">📚</span>
+                            <h4 class="font-semibold text-primary-color">B.Com - Accounting & Finance</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Sri Krishna Arts and Science College</p>
+                            <p class="text-sm italic dark:text-gray-400">2020 – 2023 | CGPA: 8.1</p>
+                        </li>
+                        <li class="mb-8 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-accent rounded-full -left-3 ring-8 ring-white dark:ring-dark-background">🏫</span>
+                            <h4 class="font-semibold text-primary-color">HSC & SSC</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2020 & 2018</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-4 md:px-12 bg-gray-50 dark:bg-dark-background">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 border-b-4 border-accent pb-2 text-center">🛠️ Skills & Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white dark:bg-dark-card rounded-xl shadow-lg border-t-4 border-accent">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary-color">Market Research & Data</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Survey Design & Execution</li>
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Consumer Behaviour Analysis</li>
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Market Trend Identification</li>
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Data Interpretation & Storytelling</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-dark-card rounded-xl shadow-lg border-t-4 border-accent">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary-color">Analytical Tools</h3>
+                    <ul class="space-y-3 dark:text-gray-300">
+                        <li class="font-medium">Microsoft Excel (Basics)</li>
+                        <li class="font-medium">R Studio (ESG Project Experience)</li>
+                        <li class="font-medium">Tally (Basics - Audit Intern)</li>
+                        <li class="font-medium">PowerPoint (Presentations)</li>
+                        <li class="font-medium">SPSS (Coursework Exposure)</li>
+                    </ul>
+                </div>
+                
+                <div class="p-6 bg-white dark:bg-dark-card rounded-xl shadow-lg border-t-4 border-accent">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary-color">Soft Skills</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Observant & Detail-Oriented</li>
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Analytical Thinking</li>
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Structured Planning</li>
+                        <li class="flex items-center dark:text-gray-300"><span class="w-2 h-2 rounded-full bg-accent mr-3"></span>Effective Team Coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-4 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 border-b-4 border-accent pb-2">📂 Projects & Research</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-2">Consumer Buying Behaviour</h3>
+                    <p class="text-sm text-accent mb-3">Final Year Research Project</p>
+                    <p class="text-gray-700 dark:text-gray-300">Analyzed the influence of advertisement media on purchasing decisions. Utilized **Chi-square and ANOVA** for statistical validation.</p>
+                    <ul class="mt-3 text-sm list-disc list-inside text-primary-color/80 dark:text-gray-400">
+                        <li>**Key Finding:** Social and digital media showed the highest correlation with purchase intent.</li>
+                    </ul>
+                    <button class="mt-4 text-accent hover:text-primary-color dark:hover:text-accent transition duration-300 open-modal-btn font-medium">View Details & Analysis »</button>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-2">ESG Performance Growth (Indian Cos)</h3>
+                    <p class="text-sm text-accent mb-3">MBA Data Analysis Project</p>
+                    <p class="text-gray-700 dark:text-gray-300">Exploratory study on the relationship between ESG scores and financial metrics (ROA & ROE) of Indian companies using **R Studio** for regression analysis.</p>
+                    <ul class="mt-3 text-sm list-disc list-inside text-primary-color/80 dark:text-gray-400">
+                        <li>**Tool Used:** R Studio</li>
+                    </ul>
+                    <button class="mt-4 text-accent hover:text-primary-color dark:hover:text-accent transition duration-300 open-modal-btn font-medium">View Charts & Methodology »</button>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-2">Audit Intern Experience</h3>
+                    <p class="text-sm text-accent mb-3">NVP & Co., Chartered Accountants</p>
+                    <p class="text-gray-700 dark:text-gray-300">Gained practical exposure to accounting practices, including entry recording, balance sheet preparation, and basic **GST filing** using **Tally** software.</p>
+                    <ul class="mt-3 text-sm list-disc list-inside text-primary-color/80 dark:text-gray-400">
+                        <li>**Skills:** Practical Tally, Statutory Compliance Basics</li>
+                    </ul>
+                    <button class="mt-4 text-accent hover:text-primary-color dark:hover:text-accent transition duration-300 open-modal-btn font-medium">View Learning Outcomes »</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="value" class="py-20 px-4 md:px-12 bg-primary-color dark:bg-accent text-white transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 border-b-4 border-accent pb-2 text-center text-white dark:text-primary-color">💡 What I Can Bring to the Zoho Market Research Team</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+                <div class="p-4">
+                    <span class="text-4xl block mb-3 text-accent dark:text-primary-color">🔍</span>
+                    <p class="font-semibold text-lg">Research Thinking</p>
+                    <p class="text-sm text-gray-300 dark:text-gray-800">Formulating hypotheses and designing targeted studies (MBA coursework).</p>
+                </div>
+                <div class="p-4">
+                    <span class="text-4xl block mb-3 text-accent dark:text-primary-color">📈</span>
+                    <p class="font-semibold text-lg">Data Interpretation</p>
+                    <p class="text-sm text-gray-300 dark:text-gray-800">Translating statistical results (ANOVA, R Studio) into clear reports.</p>
+                </div>
+                <div class="p-4">
+                    <span class="text-4xl block mb-3 text-accent dark:text-primary-color">🗺️</span>
+                    <p class="font-semibold text-lg">Consumer Mapping</p>
+                    <p class="text-sm text-gray-300 dark:text-gray-800">Understanding customer decision paths (Final Year Project). </p>
+                </div>
+                <div class="p-4">
+                    <span class="text-4xl block mb-3 text-accent dark:text-primary-color">⚡</span>
+                    <p class="font-semibold text-lg">Trend Analysis</p>
+                    <p class="text-sm text-gray-300 dark:text-gray-800">Identifying emerging market dynamics and shifts in behavior.</p>
+                </div>
+                <div class="p-4">
+                    <span class="text-4xl block mb-3 text-accent dark:text-primary-color">🤝</span>
+                    <p class="font-semibold text-lg">Collaboration</p>
+                    <p class="text-sm text-gray-300 dark:text-gray-800">Team coordination and cross-functional communication (Soft Skills).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 md:px-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 border-b-4 border-accent pb-2 text-center">📧 Get In Touch</h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">I am available for conversations about market research, business analytics, and potential internship opportunities starting in 2026.</p>
+                    
+                    <p class="flex items-center mb-3">
+                        <span class="text-accent mr-3">✉️</span>
+                        <a href="mailto:muruganarunachalamk@gmail.com" class="hover:text-accent transition duration-300">muruganarunachalamk@gmail.com</a>
+                    </p>
+                    <p class="flex items-center mb-3">
+                        <span class="text-accent mr-3">📞</span>
+                        <a href="tel:+918838289429" class="hover:text-accent transition duration-300">+91 88382 89429</a>
+                    </p>
+                    <p class="flex items-center mb-6">
+                        <span class="text-accent mr-3">📍</span>
+                        Coimbatore, India
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold mb-3">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="[LinkedIn_URL_from_Resume]" target="_blank" rel="noopener noreferrer" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-accent hover:text-primary-color transition duration-300"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.71v20.58C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.71V1.71C24 .77 23.21 0 22.23 0zM7.27 20.37H3.66V8.98h3.61v11.39zm-1.8-12.8c-1.22 0-2.02-.85-2.02-1.92 0-1.07.82-1.92 2.02-1.92s2.02.85 2.02 1.92c0 1.07-.82 1.92-2.02 1.92zm14.7 12.8H17.2V14.5c0-1.52-.57-2.56-1.92-2.56-1.04 0-1.65.7-1.92 1.38v6.75h-3.61V8.98h3.61v1.54h.05c.5-.78 1.4-1.9 3.48-1.9 2.52 0 4.4 1.6 4.4 5.04v5.77h-.01z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="space-y-4 p-6 bg-gray-50 dark:bg-dark-card rounded-lg shadow-lg" onsubmit="event.preventDefault(); alert('Thank you for your message! This is a placeholder form.')">
+                    <input type="text" placeholder="Your Name" required class="form-input dark:placeholder-gray-500" />
+                    <input type="email" placeholder="Your Email" required class="form-input dark:placeholder-gray-500" />
+                    <textarea placeholder="Your Message" rows="4" required class="form-input dark:placeholder-gray-500"></textarea>
+                    <button type="submit" class="btn-primary w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary-color dark:bg-gray-900 text-white p-6 text-center text-sm transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center border-b border-gray-700 pb-3 mb-3">
+                <p class="italic text-accent">“Markets speak in patterns. I listen through data.”</p>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-700 transition duration-300">
+                    <span class="text-white">☀️ / 🌙</span>
+                </button>
+            </div>
+            <p class="mb-1">&copy; 2025 Murugan Arunachalam K. All Rights Reserved.</p>
+            <p class="text-gray-400">Built with curiosity and crafted with purpose — by Murugan Arunachalam K.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Dynamic Typing Effect ---
+            const dynamicText = document.getElementById('dynamic-tagline');
+            const roles = ["MBA Student — Amrita", "Aspiring Market Research Analyst", "Data-Driven Thinker"];
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentRole = roles[roleIndex];
+                
+                if (isDeleting) {
+                    dynamicText.textContent = currentRole.substring(0, charIndex--);
+                } else {
+                    dynamicText.textContent = currentRole.substring(0, charIndex++);
+                }
+
+                let typeSpeed = isDeleting ? 70 : 150;
+
+                if (!isDeleting && charIndex === currentRole.length + 1) {
+                    typeSpeed = 2000; // Pause at end
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === -1) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    typeSpeed = 500; // Pause before typing new
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+            type();
+
+
+            // --- Light/Dark Mode Toggle ---
+            const toggleButton = document.getElementById('theme-toggle');
+            const root = document.documentElement; // html tag
+
+            // Load saved preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                root.classList.add('dark');
+            }
+
+            toggleButton.addEventListener('click', () => {
+                root.classList.toggle('dark');
+                let theme = root.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+            });
+            
+            // --- Smooth Scroll (For older browsers/redundancy - modern CSS handles it) ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // --- Modal Placeholder (for project details) ---
+            document.querySelectorAll('.open-modal-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    alert('Project details modal opens here for a richer view of methodology and outcomes.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
