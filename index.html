@@ -1,155 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Murugan Arunachalam K — MBA student at Amrita, aspiring Market Research Intern skilled in consumer research, data analysis, and story-driven insights.">
-  <meta property="og:title" content="Murugan Arunachalam K | Market Research Intern Portfolio" />
-  <meta property="og:description" content="Portfolio of Murugan Arunachalam K — MBA student at Amrita, aspiring Market Research Intern skilled in consumer research, data analysis, and story-driven insights." />
-  <meta property="og:type" content="website" />
-  <title>Murugan Arunachalam K | Market Research Intern Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Nunito+Sans&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Nunito Sans', sans-serif; background-color: #F8F9FA; color: #1B263B; scroll-behavior: smooth; }
-    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
-    .btn { transition: all 0.3s ease; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Murugan Arunachalam K — Portfolio</title>
+
+<style>
+/* --- 1. Base Variables & Reset --- */
+:root{
+  --bg: #f8f9fa; /* Light background */
+  --fg: #212529; /* Dark text */
+  --primary: #007bff; /* Primary action color */
+  --muted: #6c757d; /* Muted text */
+  --border: rgba(0,0,0,0.1);
+  --radius: 10px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* --- 2. Layout & Header --- */
+.container{
+  max-width:960px; /* Slightly wider container */
+  margin:0 auto;
+  padding:20px;
+}
+
+header{
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0;
+  background:rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+  backdrop-filter:blur(8px);
+  z-index:20;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+.header-flex{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+}
+.header-info h1{
+  margin:0;
+  font-size:1.8rem;
+  color:var(--primary);
+}
+.header-info p{
+  margin:0;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* --- 3. Navigation --- */
+nav a{
+  margin-left:10px;
+  text-decoration:none;
+  color:var(--fg);
+  padding:8px 14px;
+  border-radius:4px;
+  transition:0.3s ease; /* Smoother transition */
+  font-weight:500;
+}
+nav a:hover{
+  background:rgba(0, 123, 255, 0.1);
+  color:var(--primary);
+}
+
+/* --- 4. Card Styling & Dynamic Transition --- */
+.card{
+  background:#ffffff;
+  padding:30px; /* More breathing room */
+  margin:30px 0;
+  border-radius:var(--radius);
+  border:1px solid rgba(0,0,0,0.15); /* Slightly darker border */
+  box-shadow:0 4px 12px rgba(0,0,0,0.08); /* Better initial shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+
+  /* Initial state for fade-in animation */
+  opacity: 0;
+  transform: translateY(20px);
+}
+.card:hover{
+  transform:translateY(-6px); /* More pronounced lift on hover */
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+.card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 5. Content Styling --- */
+h2{
+  margin-top:0;
+  color:var(--primary);
+  border-bottom:2px solid var(--border);
+  padding-bottom:5px;
+  margin-bottom:15px;
+}
+h3{
+  margin-top:10px;
+  color:#343a40;
+}
+ul{padding-left:20px}
+ul li strong{color:var(--primary)}
+
+.chips span{
+  display:inline-block;
+  padding:8px 16px;
+  background:#e9ecef; /* Light gray background for chips */
+  border-radius:20px;
+  margin:5px;
+  font-size:0.9rem;
+  color:#495057;
+  transition:background 0.2s ease;
+}
+.chips span:hover{
+  background:var(--primary);
+  color:#ffffff;
+}
+
+/* --- 6. Footer --- */
+footer{
+  text-align:center;
+  padding:30px 0;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  margin-top:30px;
+  font-size:0.9rem;
+}
+
+/* --- 7. Smooth Scroll --- */
+html{scroll-behavior:smooth;}
+</style>
+
 </head>
-<body class="text-gray-800">
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-gray-100 px-6">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Murugan Arunachalam K</h1>
-    <p class="text-lg md:text-xl text-gray-600">Exploring Data. Understanding Markets. Creating Insights.</p>
-    <p id="typed" class="text-teal-600 font-semibold mt-2 text-lg"></p>
-    <div class="mt-8 flex gap-4">
-      <a href="Murugan_Arunachalam_K_Resume.pdf" download class="btn bg-[#1B263B] text-white px-6 py-3 rounded-xl font-semibold">📄 Download Resume</a>
-      <a href="https://www.linkedin.com/in/murugan2606" target="_blank" class="btn bg-[#3FBFBF] text-white px-6 py-3 rounded-xl font-semibold">💼 Connect via LinkedIn</a>
-    </div>
-    <a href="#about" class="mt-10 text-gray-500 animate-bounce text-2xl">↓</a>
-  </section>
+<body>
 
-  <!-- About Me -->
-  <section id="about" class="py-16 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">About Me</h2>
-    <p class="text-gray-700 leading-relaxed">
-      I’m an MBA student at <b>Amrita School of Business, Coimbatore (2025–2027)</b> and a <b>B.Com (Accounting & Finance)</b> graduate from
-      Sri Krishna Arts and Science College (2023, CGPA 8.1). With an analytical mindset and a passion for
-      <b>market research, consumer behaviour, and business analytics</b>, I aim to transform data into actionable insights that drive business growth.
-    </p>
-    <div class="mt-10 flex flex-col md:flex-row justify-between text-left">
-      <div>
-        <h3 class="font-semibold text-lg mb-2">Education Timeline</h3>
-        <ul class="border-l-4 border-[#3FBFBF] pl-4 space-y-2 text-sm">
-          <li><b>SSC (2018):</b> Chinmaya Vidyalaya — 78.6%</li>
-          <li><b>HSC (2020):</b> Lisieux MHSS — 84.16%</li>
-          <li><b>B.Com (2023):</b> Sri Krishna Arts & Science — CGPA 8.1</li>
-          <li><b>MBA (2025–2027):</b> Amrita School of Business</li>
-        </ul>
-      </div>
-      <div class="mt-6 md:mt-0">
-        <h3 class="font-semibold text-lg mb-2">Focus Areas</h3>
-        <ul class="space-y-1 text-sm">
-          <li>📊 Consumer Psychology</li>
-          <li>📈 Market Trends</li>
-          <li>🧠 Data Interpretation</li>
-          <li>💡 Business Strategy</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<header>
+  <div class="container header-flex">
+    <div class="header-info">
+      <h1>Murugan Arunachalam K</h1>
+      <p>MBA (Amrita School of Business)</p>
+    </div>
 
-  <!-- Skills -->
-  <section id="skills" class="py-16 bg-gray-50 px-6" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-10">Skills & Tools</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white rounded-xl shadow-md">
-          <h3 class="font-semibold mb-2 text-lg">Market Research</h3>
-          <p>Consumer analysis, survey interpretation, data storytelling</p>
-        </div>
-        <div class="p-6 bg-white rounded-xl shadow-md">
-          <h3 class="font-semibold mb-2 text-lg">Analytical Tools</h3>
-          <p>Excel, R Studio (ESG project), PowerPoint, Tally (Basics)</p>
-        </div>
-        <div class="p-6 bg-white rounded-xl shadow-md">
-          <h3 class="font-semibold mb-2 text-lg">Soft Skills</h3>
-          <p>Observant, analytical, organized, and team-oriented</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contrib">Contributions</a>
+      <a href="#values">Values</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Projects -->
-  <section id="projects" class="py-16 px-6" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-10">Projects & Research</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-          <h3 class="font-semibold text-lg mb-2">The Role of Advertisement Media on Consumer Buying Behaviour</h3>
-          <p class="text-sm text-gray-600">Studied media impact on purchase decisions using Chi-square & ANOVA; identified social and digital media as most influential.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-          <h3 class="font-semibold text-lg mb-2">ESG Performance Growth of Indian Companies</h3>
-          <p class="text-sm text-gray-600">Used R Studio to analyze ROA & ROE relationships; gained insight into sustainability-driven corporate growth.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-          <h3 class="font-semibold text-lg mb-2">Audit Internship — NVP & Co.</h3>
-          <p class="text-sm text-gray-600">Learned GST filing, Tally basics, and Excel accounting entries, improving data accuracy and real-world audit understanding.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="container">
 
-  <!-- Value to Zoho -->
-  <section id="value" class="py-16 bg-gray-50 px-6" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">What I Can Bring to the Zoho Market Research Team</h2>
-      <div class="grid md:grid-cols-5 gap-6 text-sm">
-        <div><p>🔍 Research Thinking</p></div>
-        <div><p>📈 Data Interpretation</p></div>
-        <div><p>🧩 Consumer Mapping</p></div>
-        <div><p>📊 Trend Analysis</p></div>
-        <div><p>🤝 Team Collaboration</p></div>
-      </div>
-    </div>
-  </section>
+  <section id="about" class="card">
+    <h2>Objective</h2>
+    <p>
+      To gain real-world marketing experience by applying creativity and analytical skills to practical challenges.
+      Seeking internship opportunities to enhance learning—focused on consumer behaviour, digital marketing,
+      market research, consumer insights, branding, Excel analysis, and data interpretation.
+    </p>
+    <ul>
+      <li>Phone: +91 8838289429</li>
+      <li>Email: muruganarunachalamk@gmail.com</li>
+      <li>LinkedIn: <a href="www.linkedin.com/in/murugan2606" target="_blank" style="color:var(--primary); text-decoration:none;">www.linkedin.com/in/murugan2606</a></li>
+      <li>Location: Coimbatore</li>
+    </ul>
+  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-6" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Contact</h2>
-      <p class="mb-4">📍 Coimbatore, India</p>
-      <p>📧 <a href="mailto:muruganarunachalamk@gmail.com" class="text-teal-600">muruganarunachalamk@gmail.com</a></p>
-      <p>📞 +91 8838289429</p>
-      <div class="mt-6">
-        <a href="https://www.linkedin.com/in/murugan2606" target="_blank" class="text-[#1B263B] underline">LinkedIn Profile</a>
-      </div>
-      <form class="mt-10 grid gap-4 max-w-md mx-auto text-left">
-        <input type="text" placeholder="Your Name" class="border rounded-lg px-4 py-2 w-full" required>
-        <input type="email" placeholder="Your Email" class="border rounded-lg px-4 py-2 w-full" required>
-        <textarea placeholder="Your Message" rows="4" class="border rounded-lg px-4 py-2 w-full" required></textarea>
-        <button type="submit" class="bg-[#1B263B] text-white px-6 py-2 rounded-lg btn w-full">Send Message</button>
-      </form>
-    </div>
-  </section>
+  <section id="education" class="card">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>MBA</strong> — Amrita School of Business, Coimbatore (2025–2027)</li>
+      <li><strong>B.Com (Accounting & Finance)</strong> — SKASC (2023), CGPA: 8.1</li>
+      <li><strong>HSC</strong> — Lisieux School (2020), 84.16%</li>
+      <li><strong>SSLC</strong> — Chinmaya Vidyalaya (2018), 78.6%</li>
+    </ul>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-gray-100 text-sm">
-    <p class="italic text-gray-600">“Markets speak in patterns. I listen through data.” — Murugan Arunachalam K</p>
-    <p class="mt-2 text-gray-500">Built with curiosity and crafted with purpose — by Murugan Arunachalam K © 2025</p>
-  </footer>
+    <h3>Certifications</h3>
+    <ul>
+      <li>Consumer Psychology — NPTEL (3 months)</li>
+      <li>Management Change in Organizations — NPTEL (3 months)</li>
+    </ul>
+  </section>
 
-  <script>
-    AOS.init();
-    new Typed("#typed", {
-      strings: ["MBA Student — Amrita", "Aspiring Market Research Analyst", "Data-Driven Thinker"],
-      typeSpeed: 60, backSpeed: 40, backDelay: 2000, loop: true
-    });
-  </script>
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <div class="chips">
+      <span>Observant</span><span>Analytical thinking</span><span>Planning & organization</span>
+      <span>Team coordination</span><span>Tally ERP (Basics)</span>
+      <span>Excel (Basics)</span><span>PPT & Word (Basics)</span>
+    </div>
+  </section>
+
+  <section id="projects" class="card">
+    <h2>Projects & Internship</h2>
+
+    <h3>Project</h3>
+    <p><strong>“The Role of Advertisement Media on Consumer Buying Behaviour”</strong> — Data analysis using Chi-square & ANOVA.</p>
+
+    <h3>Internship</h3>
+    <p><strong>Audit Intern</strong> — NVP & Co., CA Firm (2 months). Worked on bank transaction entries, Excel, GST basics, Tally exposure.</p>
+
+    <h3>Academic Work</h3>
+    <p>Case studies on Gillette & Barbie (brand positioning). ESG performance project using ROA/ROE and R Studio.</p>
+  </section>
+
+  <section id="contrib" class="card">
+    <h2>What I Can Contribute</h2>
+    <ul>
+      <li>Basic Market Research</li>
+      <li>Simple Data Analysis (Excel)</li>
+      <li>Competitor Comparison</li>
+      <li>Customer Feedback Study</li>
+      <li>Presentation (PPT)</li>
+      <li>Team Support</li>
+    </ul>
+  </section>
+
+  <section id="values" class="card">
+    <h2>My Core Values</h2>
+    <ul>
+      <li>Hard Work</li>
+      <li>Honesty</li>
+      <li>Learning Mindset</li>
+      <li>Respect</li>
+      <li>Discipline</li>
+      <li>Team Support</li>
+      <li>Patience</li>
+      <li>Curiosity</li>
+      <li>Positive Attitude</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  &copy; Murugan Arunachalam K. Designed for Impact.
+</footer>
+
+<script>
+// --- Dynamic Fade-in Transition (Intersection Observer) ---
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add the class to start the CSS transition (fade-in)
+      entry.target.classList.add('fade-in');
+      // Stop observing once it has faded in
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  // Root margin determines when the observer starts firing.
+  // -50px means it will fire when the element is 50px from the bottom of the viewport.
+  rootMargin: '0px 0px -50px 0px',
+  threshold: 0.1 // Fire when 10% of the item is visible
+});
+
+// Start observing each card
+cards.forEach(card => {
+  observer.observe(card);
+});
+
+// Mild JS cleanup (unchanged from original)
+document.addEventListener("click", e=>{
+  if(e.target.tagName==="A"){ e.target.blur(); }
+});
+</script>
+
 </body>
 </html>
