@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murugan Arunachalam K | Marketing & Consumer Insight Analyst</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Custom Styles and Vibrant/Professional Color Palette */
@@ -72,12 +69,11 @@
 </head>
 <body class="antialiased">
 
-    <!-- Global Navigation -->
     <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-extrabold text-primary-blue">Portfolio.</span>
+                    <span class="text-2xl font-extrabold text-primary-blue">Portfolio</span>
                 </div>
                 <div class="space-x-4 sm:space-x-8">
                     <a href="#home" class="nav-link">Home</a>
@@ -93,7 +89,6 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        <!-- JSON Data for Content (Integrated from Resume) -->
         <script>
             // --- Content for Contribution Section (As requested by user) ---
             const contributionData = [
@@ -175,7 +170,6 @@
         </script>
 
 
-        <!-- 1. Home / Hero Section -->
         <section id="home" class="py-16 sm:py-24 bg-white rounded-3xl shadow-2xl mb-16 overflow-hidden">
             <div class="lg:grid lg:grid-cols-12 lg:gap-12 p-6 sm:p-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
@@ -195,7 +189,6 @@
                     </div>
                 </div>
                 <div class="mt-10 lg:mt-0 lg:col-span-5 flex justify-center items-center opacity-0 hero-text" style="animation-delay: 0.8s;">
-                    <!-- Placeholder for the profile image with a modern, angular design -->
                     <div class="w-64 h-64 sm:w-80 sm:h-80 bg-light-bg rounded-3xl shadow-xl flex items-center justify-center border-4 border-accent-green transform rotate-2">
                         <i data-lucide="target" class="w-24 h-24 text-accent-green opacity-70"></i>
                     </div>
@@ -203,37 +196,29 @@
             </div>
         </section>
 
-        <!-- 2. What I Can Contribute Section -->
         <section id="contribute" class="py-16">
             <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">What I Can Contribute</h3>
             <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
                 My technical and analytical skills, focused on market understanding and data interpretation, enable me to provide immediate value.
             </p>
             <div id="contribute-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Contribution Cards (Injected by JS) -->
-            </div>
+                </div>
         </section>
         
-        <!-- 3. Education & Certifications Section (NEW) -->
         <section id="education" class="py-16 bg-white rounded-3xl shadow-xl mt-16 p-6 sm:p-12">
             <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">Education & Core Courses</h3>
             <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
                 Building a strong foundation in Marketing, Accounting, and Finance.
             </p>
             
-            <!-- Education Timeline -->
             <div id="education-timeline" class="space-y-8 max-w-4xl mx-auto">
-                <!-- Education Items (Injected by JS) -->
-            </div>
+                </div>
             
-            <!-- Certifications -->
             <h4 class="text-2xl font-bold text-secondary-dark mt-16 mb-8 reveal">Certifications & NPTEL Courses</h4>
             <div id="certifications-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- Certification Items (Injected by JS) -->
-            </div>
+                </div>
         </section>
         
-        <!-- 4. Experience & Projects Section (NEW) -->
         <section id="experience" class="py-16">
             <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">Experience & Key Projects</h3>
             <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
@@ -241,24 +226,20 @@
             </p>
             
             <div id="project-timeline" class="space-y-10 max-w-5xl mx-auto">
-                <!-- Project Items (Injected by JS) -->
-            </div>
+                </div>
         </section>
 
-        <!-- 5. My Core Values Section -->
         <section id="values" class="py-16 bg-white rounded-3xl shadow-xl mt-16 p-6 sm:p-12">
             <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">My Core Values</h3>
             <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
                 My professional ethos is built on these foundational principles, ensuring effective collaboration and continuous improvement.
             </p>
             <div id="values-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-                <!-- Value Cards (Injected by JS) -->
-            </div>
+                </div>
         </section>
 
     </main>
 
-    <!-- Footer / Contact Section -->
     <footer id="contact" class="bg-secondary-dark mt-16 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
             <div class="text-center space-y-4">
@@ -331,14 +312,17 @@
             const timeline = document.getElementById('education-timeline');
             let html = '';
             educationData.forEach((item, index) => {
+                // Corrected template literal logic using string concatenation/ternary operators *outside* the main string if needed, 
+                // but here it's cleaner to use template literals for the whole block.
+                // The original issue was using an inline JSX-style conditional within a vanilla JS template literal.
                 html += `
                     <div class="flex items-start reveal" data-delay="${index * 150}">
                         <div class="flex-shrink-0 w-24 text-sm font-medium text-primary-blue mr-6 mt-1">${item.period}</div>
                         <div class="flex-1 border-l-4 border-primary-blue pl-6 pb-6">
                             <h4 class="text-lg font-bold text-secondary-dark">${item.degree}</h4>
                             <p class="text-base text-gray-700">${item.institution}</p>
-                            ${item.specialization ? <p class="text-sm text-accent-green font-semibold">${item.specialization}</p> : ''}
-                            ${item.details ? <p class="text-sm text-gray-500 mt-1">${item.details}</p> : ''}
+                            ${item.specialization ? `<p class="text-sm text-accent-green font-semibold">${item.specialization}</p>` : ''}
+                            ${item.details ? `<p class="text-sm text-gray-500 mt-1">${item.details}</p>` : ''}
                         </div>
                     </div>
                 `;
@@ -349,4 +333,80 @@
         const renderCertifications = () => {
             const grid = document.getElementById('certifications-grid');
             let html = '';
-            certific
+            certificationData.forEach((item, index) => {
+                html += `
+                    <div class="bg-light-bg p-5 rounded-xl shadow-md flex items-center space-x-4 reveal" data-delay="${index * 100}">
+                        <i data-lucide="${item.icon}" class="w-8 h-8 text-primary-blue flex-shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-secondary-dark">${item.name}</p>
+                            <p class="text-sm text-gray-600">${item.issuer} <span class="text-xs text-primary-blue ml-2">(${item.year})</span></p>
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = html;
+        };
+
+        const renderProjects = () => {
+            const timeline = document.getElementById('project-timeline');
+            let html = '';
+            projectData.forEach((item, index) => {
+                const descriptionList = item.description.map(desc => `<li class="flex items-start text-gray-600"><i data-lucide="check-circle" class="w-4 h-4 text-accent-green mt-1 mr-2 flex-shrink-0"></i>${desc}</li>`).join('');
+
+                html += `
+                    <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-primary-blue reveal" data-delay="${index * 200}">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-bold text-secondary-dark flex items-center">
+                                <i data-lucide="${item.icon}" class="w-6 h-6 text-primary-blue mr-3"></i>
+                                ${item.title}
+                                <span class="ml-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-primary-blue">${item.type}</span>
+                            </h4>
+                            <p class="text-sm font-medium text-gray-500">${item.period}</p>
+                        </div>
+                        <p class="text-lg font-medium text-gray-700 mb-4">${item.company}</p>
+                        <ul class="space-y-2 list-none p-0">${descriptionList}</ul>
+                    </div>
+                `;
+            });
+            timeline.innerHTML = html;
+        };
+
+        // Intersection Observer for Reveal Animations
+        const initRevealAnimations = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay');
+                        if (delay) {
+                            entry.target.style.transitionDelay = `${delay}ms`;
+                        }
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of the element is visible
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        };
+
+        // Master function to run everything on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderContributionGrid();
+            renderValuesGrid();
+            renderEducation();
+            renderCertifications();
+            renderProjects();
+            
+            // Re-render Lucide Icons after dynamic content is added
+            refreshIcons();
+            
+            // Initialize animations
+            initRevealAnimations();
+        });
+    </script>
+</body>
+</html>
