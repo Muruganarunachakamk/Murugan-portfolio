@@ -1,285 +1,352 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Murugan Arunachalam K — Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murugan Arunachalam K | Marketing & Consumer Insight Analyst</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles and Vibrant/Professional Color Palette */
+        :root {
+            --primary-blue: #007bff; /* Vibrant Professional Blue */
+            --secondary-dark: #1f2937; /* Dark Gray for Text/Background */
+            --accent-green: #28a745; /* Dynamic Green Accent */
+            --light-bg: #f8f9fa; /* Off-White Background */
+        }
 
-<style>
-/* --- 1. Base Variables & Reset --- */
-:root{
-  --bg: #f8f9fa; /* Light background */
-  --fg: #212529; /* Dark text */
-  --primary: #007bff; /* Primary action color */
-  --muted: #6c757d; /* Muted text */
-  --border: rgba(0,0,0,0.1);
-  --radius: 10px;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--secondary-dark);
+            line-height: 1.6;
+        }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--fg);
-  font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+        /* Hero Section Animation */
+        .hero-title { animation: slideInLeft 1s ease-out forwards; }
+        .hero-subtitle { animation: slideInLeft 1s ease-out 0.2s forwards; }
+        .hero-text { animation: fadeIn 1s ease-out 0.4s forwards; }
+        .hero-buttons { animation: fadeIn 1s ease-out 0.6s forwards; }
 
-/* --- 2. Layout & Header --- */
-.container{
-  max-width:960px; /* Slightly wider container */
-  margin:0 auto;
-  padding:20px;
-}
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-header{
-  border-bottom:1px solid var(--border);
-  position:sticky; top:0;
-  background:rgba(255, 255, 255, 0.95); /* Semi-transparent white */
-  backdrop-filter:blur(8px);
-  z-index:20;
-  box-shadow:0 2px 4px rgba(0,0,0,0.05);
-}
-.header-flex{
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:14px;
-  align-items:center;
-}
-.header-info h1{
-  margin:0;
-  font-size:1.8rem;
-  color:var(--primary);
-}
-.header-info p{
-  margin:0;
-  color:var(--muted);
-  font-size:0.9rem;
-}
+        /* On-Scroll Reveal Animation Setup */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* --- 3. Navigation --- */
-nav a{
-  margin-left:10px;
-  text-decoration:none;
-  color:var(--fg);
-  padding:8px 14px;
-  border-radius:4px;
-  transition:0.3s ease; /* Smoother transition */
-  font-weight:500;
-}
-nav a:hover{
-  background:rgba(0, 123, 255, 0.1);
-  color:var(--primary);
-}
-
-/* --- 4. Card Styling & Dynamic Transition --- */
-.card{
-  background:#ffffff;
-  padding:30px; /* More breathing room */
-  margin:30px 0;
-  border-radius:var(--radius);
-  border:1px solid rgba(0,0,0,0.15); /* Slightly darker border */
-  box-shadow:0 4px 12px rgba(0,0,0,0.08); /* Better initial shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
-
-  /* Initial state for fade-in animation */
-  opacity: 0;
-  transform: translateY(20px);
-}
-.card:hover{
-  transform:translateY(-6px); /* More pronounced lift on hover */
-  box-shadow:0 10px 20px rgba(0,0,0,0.15);
-}
-.card.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- 5. Content Styling --- */
-h2{
-  margin-top:0;
-  color:var(--primary);
-  border-bottom:2px solid var(--border);
-  padding-bottom:5px;
-  margin-bottom:15px;
-}
-h3{
-  margin-top:10px;
-  color:#343a40;
-}
-ul{padding-left:20px}
-ul li strong{color:var(--primary)}
-
-.chips span{
-  display:inline-block;
-  padding:8px 16px;
-  background:#e9ecef; /* Light gray background for chips */
-  border-radius:20px;
-  margin:5px;
-  font-size:0.9rem;
-  color:#495057;
-  transition:background 0.2s ease;
-}
-.chips span:hover{
-  background:var(--primary);
-  color:#ffffff;
-}
-
-/* --- 6. Footer --- */
-footer{
-  text-align:center;
-  padding:30px 0;
-  color:var(--muted);
-  border-top:1px solid var(--border);
-  margin-top:30px;
-  font-size:0.9rem;
-}
-
-/* --- 7. Smooth Scroll --- */
-html{scroll-behavior:smooth;}
-</style>
-
+        /* Card Hover Effect */
+        .animated-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        .animated-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        /* Style for the navigation links */
+        .nav-link {
+            @apply text-gray-700 hover:text-primary-blue inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 border-transparent hover:border-primary-blue transition duration-150;
+        }
+        .footer-link {
+            @apply text-gray-400 hover:text-white transition duration-300 flex items-center mb-2 sm:mb-0;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-<header>
-  <div class="container header-flex">
-    <div class="header-info">
-      <h1>Murugan Arunachalam K</h1>
-      <p>MBA (Amrita School of Business)</p>
-    </div>
+    <!-- Global Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-extrabold text-primary-blue">Portfolio.</span>
+                </div>
+                <div class="space-x-4 sm:space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#contribute" class="nav-link">Contribution</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#values" class="nav-link">Core Values</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contrib">Contributions</a>
-      <a href="#values">Values</a>
-    </nav>
-  </div>
-</header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-<div class="container">
+        <!-- JSON Data for Content (Integrated from Resume) -->
+        <script>
+            // --- Content for Contribution Section (As requested by user) ---
+            const contributionData = [
+                { title: "Basic Market Research", icon: "clipboard-list", color: "text-primary-blue", description: "Executing initial market scans, identifying trends, and defining target segments." },
+                { title: "Simple Data Analysis (Excel)", icon: "bar-chart-3", color: "text-accent-green", description: "Utilizing Excel for data cleaning, basic statistical analysis, and creating insightful reports." },
+                { title: "Competitor Comparison", icon: "scale", color: "text-red-500", description: "Conducting structured analysis of competitor strategies, products, and market positioning." },
+                { title: "Customer Feedback Study", icon: "message-circle-code", color: "text-yellow-600", description: "Collecting, organizing, and synthesizing customer feedback to derive actionable insights." },
+                { title: "Presentation (PPT)", icon: "monitor-play", color: "text-purple-600", description: "Creating clear, visually engaging, and effective PowerPoint presentations for findings." },
+                { title: "Team Support", icon: "users", color: "text-indigo-600", description: "Offering reliable support across various tasks to ensure smooth and coordinated project execution." }
+            ];
 
-  <section id="about" class="card">
-    <h2>Objective</h2>
-    <p>
-      To gain real-world marketing experience by applying creativity and analytical skills to practical challenges.
-      Seeking internship opportunities to enhance learning—focused on consumer behaviour, digital marketing,
-      market research, consumer insights, branding, Excel analysis, and data interpretation.
-    </p>
-    <ul>
-      <li>Phone: +91 8838289429</li>
-      <li>Email: muruganarunachalamk@gmail.com</li>
-      <li>LinkedIn: <a href="www.linkedin.com/in/murugan2606" target="_blank" style="color:var(--primary); text-decoration:none;">www.linkedin.com/in/murugan2606</a></li>
-      <li>Location: Coimbatore</li>
-    </ul>
-  </section>
+            // --- Content for Core Values Section (As requested by user) ---
+            const coreValuesData = [
+                { title: "Hard Work", icon: "hammer" },
+                { title: "Honesty", icon: "hand-heart" },
+                { title: "Learning Mindset", icon: "brain-cog" },
+                { title: "Respect", icon: "user-round-check" },
+                { title: "Discipline", icon: "ruler" },
+                { title: "Team Support", icon: "users-round" },
+                { title: "Patience", icon: "hourglass" },
+                { title: "Curiosity", icon: "lightbulb" },
+                { title: "Positive Attitude", icon: "smile-plus" }
+            ];
+            
+            // --- Content for Education Section (From Resume PDF) ---
+            const educationData = [
+                { degree: "Master of Business Administration (MBA)", specialization: "Marketing", institution: "Amrita School of Business, Coimbatore", period: "2025 - 2027", details: "Seeking summer internship opportunities." },
+                { degree: "Bachelor of Commerce in Accounting & Finance", specialization: "CGPA: 8.1", institution: "Sri Krishna Arts and Science College, Coimbatore", period: "2020 - 2023", details: "Strong foundation in Commerce, Accounting, and Finance." },
+                { degree: "HSC (State Board) - Commerce with Business Mathematics", specialization: "84.16%", institution: "Lisieux Matriculation Higher Secondary School, Coimbatore", period: "2020", details: null },
+                { degree: "SSC (State Board)", specialization: "78.6%", institution: "Chinmaya Vidyalaya Matriculation Higher Secondary School", period: "2018", details: null },
+            ];
+            
+            // --- Content for Experience & Projects Section (From Resume PDF) ---
+            const projectData = [
+                { 
+                    type: "Internship",
+                    title: "Audit Intern", 
+                    company: "NVP & Co., Chartered Accountants", 
+                    period: "2 Months", 
+                    icon: "briefcase",
+                    description: [
+                        "Worked on recording bank transactions and entries using Microsoft Excel.",
+                        "Gained basic exposure to GST filing and Tally operations.",
+                        "Improved understanding of accounting procedures, GST compliance, and data entry accuracy."
+                    ] 
+                },
+                { 
+                    type: "Academic Project",
+                    title: "Brand Strategy and ESG Analysis", 
+                    company: "Amrita School of Business, Coimbatore", 
+                    period: "2025 - 2027", 
+                    icon: "trending-up",
+                    description: [
+                        "Completed case studies on Gillette and Barbie focusing on brand positioning and gender-based marketing.",
+                        "Conducted an ESG Performance Growth of Indian Companies project using R Studio analyzing ROA and ROE relationships.",
+                        "Enhanced analytical and research skills, deepened knowledge of consumer psychology, marketing analysis, and ESG performance."
+                    ] 
+                },
+                { 
+                    type: "Academic Project",
+                    title: "The Role of Advertisement Media on Consumer Buying Behaviour", 
+                    company: "Sri Krishna Arts and Science College, Coimbatore", 
+                    period: "2020 - 2023", 
+                    icon: "megaphone",
+                    description: [
+                        "Studied how different advertisement media influence consumer purchase decisions.",
+                        "Collected and analysed survey data using Chi-square and ANOVA to assess media effectiveness.",
+                        "Gained practical exposure to consumer behaviour analysis and enhanced skills in data interpretation."
+                    ] 
+                }
+            ];
+            
+            // --- Content for Certifications Section (From Resume PDF) ---
+            const certificationData = [
+                { name: "Consumer Psychology", issuer: "NPTEL", year: "2020 (Sep-Nov)", icon: "award" },
+                { name: "Management Change in Organizations", issuer: "NPTEL", year: "2021 (Jan-Mar)", icon: "shuffle" }
+            ];
 
-  <section id="education" class="card">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>MBA</strong> — Amrita School of Business, Coimbatore (2025–2027)</li>
-      <li><strong>B.Com (Accounting & Finance)</strong> — SKASC (2023), CGPA: 8.1</li>
-      <li><strong>HSC</strong> — Lisieux School (2020), 84.16%</li>
-      <li><strong>SSLC</strong> — Chinmaya Vidyalaya (2018), 78.6%</li>
-    </ul>
+        </script>
 
-    <h3>Certifications</h3>
-    <ul>
-      <li>Consumer Psychology — NPTEL (3 months)</li>
-      <li>Management Change in Organizations — NPTEL (3 months)</li>
-    </ul>
-  </section>
 
-  <section id="skills" class="card">
-    <h2>Skills</h2>
-    <div class="chips">
-      <span>Observant</span><span>Analytical thinking</span><span>Planning & organization</span>
-      <span>Team coordination</span><span>Tally ERP (Basics)</span>
-      <span>Excel (Basics)</span><span>PPT & Word (Basics)</span>
-    </div>
-  </section>
+        <!-- 1. Home / Hero Section -->
+        <section id="home" class="py-16 sm:py-24 bg-white rounded-3xl shadow-2xl mb-16 overflow-hidden">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-12 p-6 sm:p-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-secondary-dark opacity-0 hero-title">
+                        Murugan Arunachalam K
+                    </h1>
+                    <h2 class="text-xl sm:text-2xl font-semibold text-primary-blue opacity-0 hero-subtitle">
+                        Aspiring Marketing Professional | Consumer Insight Analyst
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 opacity-0 hero-text">
+                        Objective: To gain real-world marketing experience by applying my creativity and analytical skills to practical challenges. I am passionate about understanding consumer behaviour, digital marketing, market research, and data interpretation in today's fast-changing market.
+                    </p>
+                    <div class="flex space-x-4 mt-8 opacity-0 hero-buttons">
+                        <a id="linkedin-link-home" href="https://www.linkedin.com/in/murugan2606" target="_blank" class="flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-primary-blue hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                            Connect on LinkedIn <i data-lucide="linkedin" class="w-5 h-5 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-10 lg:mt-0 lg:col-span-5 flex justify-center items-center opacity-0 hero-text" style="animation-delay: 0.8s;">
+                    <!-- Placeholder for the profile image with a modern, angular design -->
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 bg-light-bg rounded-3xl shadow-xl flex items-center justify-center border-4 border-accent-green transform rotate-2">
+                        <i data-lucide="target" class="w-24 h-24 text-accent-green opacity-70"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="projects" class="card">
-    <h2>Projects & Internship</h2>
+        <!-- 2. What I Can Contribute Section -->
+        <section id="contribute" class="py-16">
+            <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">What I Can Contribute</h3>
+            <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
+                My technical and analytical skills, focused on market understanding and data interpretation, enable me to provide immediate value.
+            </p>
+            <div id="contribute-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Contribution Cards (Injected by JS) -->
+            </div>
+        </section>
+        
+        <!-- 3. Education & Certifications Section (NEW) -->
+        <section id="education" class="py-16 bg-white rounded-3xl shadow-xl mt-16 p-6 sm:p-12">
+            <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">Education & Core Courses</h3>
+            <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
+                Building a strong foundation in Marketing, Accounting, and Finance.
+            </p>
+            
+            <!-- Education Timeline -->
+            <div id="education-timeline" class="space-y-8 max-w-4xl mx-auto">
+                <!-- Education Items (Injected by JS) -->
+            </div>
+            
+            <!-- Certifications -->
+            <h4 class="text-2xl font-bold text-secondary-dark mt-16 mb-8 reveal">Certifications & NPTEL Courses</h4>
+            <div id="certifications-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Certification Items (Injected by JS) -->
+            </div>
+        </section>
+        
+        <!-- 4. Experience & Projects Section (NEW) -->
+        <section id="experience" class="py-16">
+            <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">Experience & Key Projects</h3>
+            <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
+                Applying analytical knowledge to real-world business challenges and consumer behavior studies.
+            </p>
+            
+            <div id="project-timeline" class="space-y-10 max-w-5xl mx-auto">
+                <!-- Project Items (Injected by JS) -->
+            </div>
+        </section>
 
-    <h3>Project</h3>
-    <p><strong>“The Role of Advertisement Media on Consumer Buying Behaviour”</strong> — Data analysis using Chi-square & ANOVA.</p>
+        <!-- 5. My Core Values Section -->
+        <section id="values" class="py-16 bg-white rounded-3xl shadow-xl mt-16 p-6 sm:p-12">
+            <h3 class="text-4xl font-extrabold text-secondary-dark text-center mb-4 reveal">My Core Values</h3>
+            <p class="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 reveal" style="transition-delay: 0.1s;">
+                My professional ethos is built on these foundational principles, ensuring effective collaboration and continuous improvement.
+            </p>
+            <div id="values-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Value Cards (Injected by JS) -->
+            </div>
+        </section>
 
-    <h3>Internship</h3>
-    <p><strong>Audit Intern</strong> — NVP & Co., CA Firm (2 months). Worked on bank transaction entries, Excel, GST basics, Tally exposure.</p>
+    </main>
 
-    <h3>Academic Work</h3>
-    <p>Case studies on Gillette & Barbie (brand positioning). ESG performance project using ROA/ROE and R Studio.</p>
-  </section>
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-secondary-dark mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center space-y-4">
+                <h4 class="text-3xl font-bold text-white">Let's Connect and Collaborate</h4>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    I am actively seeking summer internship opportunities. Reach out to discuss how my analytical and marketing focused skills can be leveraged in your team.
+                </p>
+                <div class="flex justify-center flex-wrap space-x-6 pt-6">
+                    <a href="mailto:muruganarunachalamk@gmail.com" class="footer-link">
+                        <i data-lucide="mail" class="w-5 h-5 mr-2"></i> muruganarunachalamk@gmail.com
+                    </a>
+                    <a href="tel:+918838289429" class="footer-link">
+                        <i data-lucide="phone" class="w-5 h-5 mr-2"></i> +91 8838289429
+                    </a>
+                    <a id="linkedin-link-footer" href="https://www.linkedin.com/in/murugan2606" target="_blank" class="footer-link">
+                        <i data-lucide="linkedin" class="w-5 h-5 mr-2"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-gray-700 text-center">
+                <p class="text-sm text-gray-500">&copy; 2025 Murugan Arunachalam K. All rights reserved. | Coimbatore</p>
+            </div>
+        </div>
+    </footer>
 
-  <section id="contrib" class="card">
-    <h2>What I Can Contribute</h2>
-    <ul>
-      <li>Basic Market Research</li>
-      <li>Simple Data Analysis (Excel)</li>
-      <li>Competitor Comparison</li>
-      <li>Customer Feedback Study</li>
-      <li>Presentation (PPT)</li>
-      <li>Team Support</li>
-    </ul>
-  </section>
+    <script>
+        // ------------------------------------------------------------------
+        // JAVASCRIPT FOR DYNAMIC CONTENT & ANIMATIONS
+        // ------------------------------------------------------------------
 
-  <section id="values" class="card">
-    <h2>My Core Values</h2>
-    <ul>
-      <li>Hard Work</li>
-      <li>Honesty</li>
-      <li>Learning Mindset</li>
-      <li>Respect</li>
-      <li>Discipline</li>
-      <li>Team Support</li>
-      <li>Patience</li>
-      <li>Curiosity</li>
-      <li>Positive Attitude</li>
-    </ul>
-  </section>
+        // Global function to handle icon recreation
+        const refreshIcons = () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        };
 
-</div>
+        const renderContributionGrid = () => {
+            const contributeGrid = document.getElementById('contribute-grid');
+            let html = '';
+            contributionData.forEach((item, index) => {
+                html += `
+                    <div class="p-6 bg-white rounded-xl animated-card reveal" data-delay="${index * 100}">
+                        <div class="flex items-start space-x-4 mb-3">
+                            <i data-lucide="${item.icon}" class="w-8 h-8 ${item.color} flex-shrink-0"></i>
+                            <h4 class="text-xl font-bold text-secondary-dark">${item.title}</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">${item.description}</p>
+                    </div>
+                `;
+            });
+            contributeGrid.innerHTML = html;
+        };
 
-<footer>
-  &copy; Murugan Arunachalam K. Designed for Impact.
-</footer>
-
-<script>
-// --- Dynamic Fade-in Transition (Intersection Observer) ---
-const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Add the class to start the CSS transition (fade-in)
-      entry.target.classList.add('fade-in');
-      // Stop observing once it has faded in
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  // Root margin determines when the observer starts firing.
-  // -50px means it will fire when the element is 50px from the bottom of the viewport.
-  rootMargin: '0px 0px -50px 0px',
-  threshold: 0.1 // Fire when 10% of the item is visible
-});
-
-// Start observing each card
-cards.forEach(card => {
-  observer.observe(card);
-});
-
-// Mild JS cleanup (unchanged from original)
-document.addEventListener("click", e=>{
-  if(e.target.tagName==="A"){ e.target.blur(); }
-});
-</script>
-
-</body>
-</html>
+        const renderValuesGrid = () => {
+            const valuesGrid = document.getElementById('values-grid');
+            let html = '';
+            coreValuesData.forEach((item, index) => {
+                html += `
+                    <div class="flex flex-col items-center justify-center p-4 bg-light-bg rounded-lg text-center animated-card reveal" data-delay="${index * 50}">
+                        <i data-lucide="${item.icon}" class="w-8 h-8 text-primary-blue mb-2"></i>
+                        <span class="text-sm font-medium text-secondary-dark">${item.title}</span>
+                    </div>
+                `;
+            });
+            valuesGrid.innerHTML = html;
+        };
+        
+        const renderEducation = () => {
+            const timeline = document.getElementById('education-timeline');
+            let html = '';
+            educationData.forEach((item, index) => {
+                html += `
+                    <div class="flex items-start reveal" data-delay="${index * 150}">
+                        <div class="flex-shrink-0 w-24 text-sm font-medium text-primary-blue mr-6 mt-1">${item.period}</div>
+                        <div class="flex-1 border-l-4 border-primary-blue pl-6 pb-6">
+                            <h4 class="text-lg font-bold text-secondary-dark">${item.degree}</h4>
+                            <p class="text-base text-gray-700">${item.institution}</p>
+                            ${item.specialization ? <p class="text-sm text-accent-green font-semibold">${item.specialization}</p> : ''}
+                            ${item.details ? <p class="text-sm text-gray-500 mt-1">${item.details}</p> : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            timeline.innerHTML = html;
+        };
+        
+        const renderCertifications = () => {
+            const grid = document.getElementById('certifications-grid');
+            let html = '';
+            certific
