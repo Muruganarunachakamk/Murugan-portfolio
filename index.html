@@ -27,7 +27,7 @@
         .hero-title { animation: slideInLeft 1s ease-out forwards; }
         .hero-subtitle { animation: slideInLeft 1s ease-out 0.2s forwards; }
         .hero-text { animation: fadeIn 1s ease-out 0.4s forwards; }
-        .hero-buttons { animation: fadeIn 1s ease-out 0.6s forwards; }
+        /* .hero-buttons class removed from button div */
 
         @keyframes slideInLeft {
             from { opacity: 0; transform: translateX(-50px); }
@@ -53,6 +53,7 @@
         .animated-card {
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            cursor: pointer; /* Indicate clickability */
         }
         .animated-card:hover {
             transform: translateY(-8px);
@@ -63,7 +64,30 @@
             @apply text-gray-700 hover:text-primary-blue inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 border-transparent hover:border-primary-blue transition duration-150;
         }
         .footer-link {
+            /* Adjusted for better visibility if dark background fails, but kept mostly the same */
             @apply text-gray-400 hover:text-white transition duration-300 flex items-center mb-2 sm:mb-0;
+        }
+        .detail-description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            opacity: 0;
+            padding-top: 0;
+        }
+        .detail-description.active {
+            max-height: 200px; /* Adjust based on content height */
+            opacity: 1;
+            padding-top: 8px;
+        }
+        /* Fix for contact text visibility: Ensures dark text if footer background fails */
+        #contact .text-white {
+            color: #ffffff;
+        }
+        #contact p.text-gray-400 {
+            color: #9ca3af;
+        }
+        #contact .footer-link {
+            color: #9ca3af;
         }
     </style>
 </head>
@@ -92,25 +116,26 @@
         <script>
             // --- Content for Contribution Section (As requested by user) ---
             const contributionData = [
-                { title: "Basic Market Research", icon: "clipboard-list", color: "text-primary-blue", description: "Executing initial market scans, identifying trends, and defining target segments." },
-                { title: "Simple Data Analysis (Excel)", icon: "bar-chart-3", color: "text-accent-green", description: "Utilizing Excel for data cleaning, basic statistical analysis, and creating insightful reports." },
-                { title: "Competitor Comparison", icon: "scale", color: "text-red-500", description: "Conducting structured analysis of competitor strategies, products, and market positioning." },
-                { title: "Customer Feedback Study", icon: "message-circle-code", color: "text-yellow-600", description: "Collecting, organizing, and synthesizing customer feedback to derive actionable insights." },
-                { title: "Presentation (PPT)", icon: "monitor-play", color: "text-purple-600", description: "Creating clear, visually engaging, and effective PowerPoint presentations for findings." },
-                { title: "Team Support", icon: "users", color: "text-indigo-600", description: "Offering reliable support across various tasks to ensure smooth and coordinated project execution." }
+                { title: "Basic Market Research", icon: "clipboard-list", color: "text-primary-blue", description: "Executing initial market scans, identifying trends, and defining target segments.", details: "I can collect information about customers, competitors, and industry trends." },
+                { title: "Simple Data Analysis (Excel)", icon: "bar-chart-3", color: "text-accent-green", description: "Utilizing Excel for data cleaning, basic statistical analysis, and creating insightful reports.", details: "I can organize data in Excel and find basic insights." },
+                { title: "Competitor Comparison", icon: "scale", color: "text-red-500", description: "Conducting structured analysis of competitor strategies, products, and market positioning.", details: "I can compare features, pricing, and customer reviews of different companies." },
+                { title: "Customer Feedback Study", icon: "message-circle-code", color: "text-yellow-600", description: "Collecting, organizing, and synthesizing customer feedback to derive actionable insights.", details: "I can create small surveys and understand what customers want." },
+                { title: "Presentation (PPT)", icon: "monitor-play", color: "text-purple-600", description: "Creating clear, visually engaging, and effective PowerPoint presentations for findings.", details: "I can make clear PPTs and reports to share findings." },
+                { title: "Team Support", icon: "users", color: "text-indigo-600", description: "Offering reliable support across various tasks to ensure smooth and coordinated project execution.", details: "I am flexible, willing to learn, and support the team with any tasks." }
             ];
 
             // --- Content for Core Values Section (As requested by user) ---
             const coreValuesData = [
-                { title: "Hard Work", icon: "hammer" },
-                { title: "Honesty", icon: "hand-heart" },
-                { title: "Learning Mindset", icon: "brain-cog" },
-                { title: "Respect", icon: "user-round-check" },
-                { title: "Discipline", icon: "ruler" },
-                { title: "Team Support", icon: "users-round" },
-                { title: "Patience", icon: "hourglass" },
-                { title: "Curiosity", icon: "lightbulb" },
-                { title: "Positive Attitude", icon: "smile-plus" }
+                { title: "Hard Work", icon: "hammer", details: "I believe in giving my best and staying consistent until the work is done." },
+                { title: "Honesty", icon: "hand-heart", details: "I am straightforward and truthful in my work and communication." },
+                { title: "Learning Mindset", icon: "brain-cog", details: "I am always ready to learn new skills and improve myself." },
+                { title: "Respect", icon: "user-round-check", details: "I treat everyone politely and value different opinions." },
+                { title: "Discipline", icon: "ruler", details: "I stay focused on my goals and follow a routine to achieve them." },
+                { title: "Team Support", icon: "users-round", details: "I help my team whenever needed and work well with others." },
+                { title: "Patience", icon: "hourglass", details: "I handle tasks calmly and don’t rush decisions." },
+                { title: "Curiosity", icon: "lightbulb", details: "I like to understand how things work and explore new ideas." },
+                { title: "Positive Attitude", icon: "smile-plus", details: "I stay hopeful even when situations are difficult." },
+                { title: "Empathy", icon: "user-check", details: "I try to understand others’ feelings and viewpoints, and I respond with care and kindness." }, // Added Empathy
             ];
             
             // --- Content for Education Section (From Resume PDF) ---
@@ -182,12 +207,7 @@
                     <p class="mt-4 text-lg text-gray-600 opacity-0 hero-text">
                         Objective: To gain real-world marketing experience by applying my creativity and analytical skills to practical challenges. I am passionate about understanding consumer behaviour, digital marketing, market research, and data interpretation in today's fast-changing market.
                     </p>
-                    <div class="flex space-x-4 mt-8 opacity-0 hero-buttons">
-                        <a id="linkedin-link-home" href="https://www.linkedin.com/in/murugan2606" target="_blank" class="flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-primary-blue hover:bg-blue-700 transition duration-300 transform hover:scale-105">
-                            Connect on LinkedIn <i data-lucide="linkedin" class="w-5 h-5 ml-2"></i>
-                        </a>
                     </div>
-                </div>
                 <div class="mt-10 lg:mt-0 lg:col-span-5 flex justify-center items-center opacity-0 hero-text" style="animation-delay: 0.8s;">
                     <div class="w-64 h-64 sm:w-80 sm:h-80 bg-light-bg rounded-3xl shadow-xl border-4 border-accent-green transform rotate-2 overflow-hidden">
                         <img 
@@ -197,7 +217,7 @@
                         >
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="contribute" class="py-16">
@@ -281,17 +301,42 @@
             }
         };
 
+        // Click handler to toggle details
+        const toggleDetails = (event) => {
+            const card = event.currentTarget;
+            const detailElement = card.querySelector('.detail-description');
+            
+            // Close other active cards in the same section
+            document.querySelectorAll('.detail-description.active').forEach(desc => {
+                if (desc !== detailElement) {
+                    desc.classList.remove('active');
+                    desc.closest('.animated-card').classList.remove('z-10');
+                }
+            });
+
+            // Toggle the clicked card
+            detailElement.classList.toggle('active');
+            card.classList.toggle('z-10'); // Bring to front when active
+        };
+
         const renderContributionGrid = () => {
             const contributeGrid = document.getElementById('contribute-grid');
             let html = '';
             contributionData.forEach((item, index) => {
                 html += `
-                    <div class="p-6 bg-white rounded-xl animated-card reveal" data-delay="${index * 100}">
-                        <div class="flex items-start space-x-4 mb-3">
-                            <i data-lucide="${item.icon}" class="w-8 h-8 ${item.color} flex-shrink-0"></i>
-                            <h4 class="text-xl font-bold text-secondary-dark">${item.title}</h4>
+                    <div class="p-6 bg-white rounded-xl animated-card reveal" data-delay="${index * 100}" onclick="toggleDetails(event)">
+                        <div class="flex items-start justify-between space-x-4 mb-3">
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="${item.icon}" class="w-8 h-8 ${item.color} flex-shrink-0"></i>
+                                <h4 class="text-xl font-bold text-secondary-dark">${item.title}</h4>
+                            </div>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-300"></i>
                         </div>
                         <p class="text-gray-600 text-sm">${item.description}</p>
+                        <div class="detail-description">
+                            <hr class="my-2 border-gray-100">
+                            <p class="text-sm text-primary-blue font-semibold">${item.details}</p>
+                        </div>
                     </div>
                 `;
             });
@@ -301,11 +346,15 @@
         const renderValuesGrid = () => {
             const valuesGrid = document.getElementById('values-grid');
             let html = '';
+            // Sort to ensure Empathy (which was added) appears logically or just use the updated array
             coreValuesData.forEach((item, index) => {
                 html += `
-                    <div class="flex flex-col items-center justify-center p-4 bg-light-bg rounded-lg text-center animated-card reveal" data-delay="${index * 50}">
+                    <div class="flex flex-col items-center justify-center p-4 bg-light-bg rounded-lg text-center animated-card reveal" data-delay="${index * 50}" onclick="toggleDetails(event)">
                         <i data-lucide="${item.icon}" class="w-8 h-8 text-primary-blue mb-2"></i>
                         <span class="text-sm font-medium text-secondary-dark">${item.title}</span>
+                        <div class="detail-description text-left px-2 w-full mt-2">
+                             <p class="text-xs text-secondary-dark font-medium">${item.details}</p>
+                        </div>
                     </div>
                 `;
             });
@@ -316,9 +365,6 @@
             const timeline = document.getElementById('education-timeline');
             let html = '';
             educationData.forEach((item, index) => {
-                // Corrected template literal logic using string concatenation/ternary operators *outside* the main string if needed, 
-                // but here it's cleaner to use template literals for the whole block.
-                // The original issue was using an inline JSX-style conditional within a vanilla JS template literal.
                 html += `
                     <div class="flex items-start reveal" data-delay="${index * 150}">
                         <div class="flex-shrink-0 w-24 text-sm font-medium text-primary-blue mr-6 mt-1">${item.period}</div>
@@ -365,7 +411,7 @@
                                 ${item.title}
                                 <span class="ml-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-primary-blue">${item.type}</span>
                             </h4>
-                            <p class="text-sm font-medium text-gray-500">${item.period}</p>
+                            <p class="text-sm font-medium text-gray-500">${item.company}</p>
                         </div>
                         <p class="text-lg font-medium text-gray-700 mb-4">${item.company}</p>
                         <ul class="space-y-2 list-none p-0">${descriptionList}</ul>
