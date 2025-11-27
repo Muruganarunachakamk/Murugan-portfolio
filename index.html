@@ -52,7 +52,8 @@
         .animated-card {
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            cursor: pointer;
+            /* FIX 1: Change cursor from hand pointer to default arrow */
+            cursor: default;
         }
         .animated-card:hover {
             transform: translateY(-8px);
@@ -78,21 +79,21 @@
             color: #4b5563 !important;
         }
         
-        /* FIX 1: Ensure image fills the container correctly and is slightly larger */
+        /* FIX: Ensure image fills the container correctly and is slightly larger */
         .hero-image-container img {
             width: 120%; /* Increased size */
             height: 120%; /* Increased size */
             object-fit: cover;
             /* Center the slightly oversized image */
             position: absolute; 
-            top: 60%;
+            top: 50%; /* Adjusted from 60% for better vertical centering */
             left: 50%;
             transform: translate(-50%, -50%);
         }
         /* Style the container to allow positioning of oversized image */
         .hero-image-container .image-frame {
             position: relative;
-            /* FIX 1: Straighten the frame */
+            /* Straighten the frame */
             transform: rotate(0); 
         }
     </style>
@@ -146,7 +147,6 @@
             
             // --- Content for Education Section (From Resume PDF) ---
             const educationData = [
-                // FIX 4: Removed "Marketing" specialization, updated details sentence
                 { degree: "Master of Business Administration (MBA)", specialization: null, institution: "Amrita School of Business, Coimbatore", period: "2025 - 2027", details: "I am currently looking for summer internship opportunities in the field of Marketing." },
                 { degree: "Bachelor of Commerce in Accounting & Finance", specialization: "CGPA: 8.1", institution: "Sri Krishna Arts and Science College, Coimbatore", period: "2020 - 2023", details: "Strong foundation in Commerce, Accounting, and Finance." },
                 { degree: "HSC (State Board) - Commerce with Business Mathematics", specialization: "84.16%", institution: "Lisieux Matriculation Higher Secondary School, Coimbatore", period: "2020", details: null },
@@ -324,9 +324,9 @@
                                 <i data-lucide="${item.icon}" class="w-8 h-8 ${item.color} flex-shrink-0"></i>
                                 <h4 class="text-xl font-bold text-secondary-dark">${item.title}</h4>
                             </div>
-                            </div>
-                        <p class="text-gray-600 text-sm">${item.description}</p>
                         </div>
+                        <p class="text-gray-600 text-sm">${item.description}</p>
+                    </div>
                 `;
             });
             contributeGrid.innerHTML = html;
@@ -336,11 +336,13 @@
             const valuesGrid = document.getElementById('values-grid');
             let html = '';
             coreValuesData.forEach((item, index) => {
+                // FIX 2: Added details back to Core Values, similar to Contribution boxes
                 html += `
                     <div class="flex flex-col items-center justify-center p-4 bg-light-bg rounded-lg text-center animated-card reveal" data-delay="${index * 50}">
                         <i data-lucide="${item.icon}" class="w-8 h-8 text-primary-blue mb-2"></i>
                         <span class="text-sm font-medium text-secondary-dark">${item.title}</span>
-                        </div>
+                        <p class="text-xs text-secondary-dark text-center mt-2">${item.details}</p>
+                    </div>
                 `;
             });
             valuesGrid.innerHTML = html;
@@ -444,6 +446,4 @@
         });
     </script>
 </body>
-
 </html>
-
